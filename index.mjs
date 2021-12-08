@@ -15,7 +15,7 @@ const blacklist = process.env.ANGRY_BENDER_BLACKLIST.split(',').map(Number);
 const messageTemplate =
     process.env.ANGRY_BENDER_MESSAGE_TEMPLATE ??
     'Hey {{user}}!\nYour request for {{media_title}} was still approved, but this is a kind reminder that {{media_title}} is available on {{streamer}} in {{country}}!\nSurely you have a login to this streaming service already?';
-const port = process.env.ANGRY_BENDER_PORT ?? 5454;
+const port = parseInt(process.env.ANGRY_BENDER_PORT ?? 5454);
 const { country } = whereAlpha2(region);
 const shouldApprove = Boolean(process.env.ANGRY_BENDER_APPROVE);
 
@@ -31,7 +31,13 @@ const server = http.createServer(async (req, res) => {
             req.on('data', (chunk) => {
                 data += chunk;
             });
-            req.on('end', () => resolve(JSON.parse(data)));
+            req.on('end', () => {
+                try {
+                    resolve(JSON.parse(data));
+                } catch (ex) {
+                    reject(ex);
+                }
+            });
             req.on('error', (err) => reject(err));
         });
 
@@ -100,4 +106,5 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(parseInt(port));
+server.listen(port);
+console.log(`Webhook listening at ${port}.`);

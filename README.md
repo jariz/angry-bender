@@ -8,8 +8,7 @@ By default it will just post an `@` to the offending user in a public channel to
 _\* = really stretching the definition of that term here_
 
 ## Example
-![](https://jari.lol/4SZ0zRxPck.png)
-
+<img src="https://jari.lol/9yqTk0pUwk.png" width="550">
 
 ## Requirements
 - [Overseerr](https://github.com/sct/overseerr/) (duh)
