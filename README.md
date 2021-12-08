@@ -15,7 +15,7 @@ _\* = really stretching the definition of that term here_
 - Node v16+ (or docker)
 
 ## Setup
-- Install using your preferred method
+- Install using your preferred method (see below)
 - Set the required env vars:
   - Configure overseerr URL and API key (see [env var instructions](https://github.com/jariz/angry-bender/blob/latest/ENV_VARS.md))
   - Configure blacklisted streaming providers (see [env var instructions](https://github.com/jariz/angry-bender/blob/latest/ENV_VARS.md))
