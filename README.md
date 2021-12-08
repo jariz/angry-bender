@@ -43,6 +43,7 @@ With the bot up and running:
   - 'Media Requested' (if auto-approval is not enabled)
   - 'Media Automatically Approved' (if it is)
 - Save
+- Make sure all your users have a discord ID set, see [how to do that here](https://github.com/darkalfx/requestrr/wiki/Configuring-Overseerr#how-to-link-a-discord-user-to-an-overseerr-user).
 - You're done!
 
 ## Environment variables
